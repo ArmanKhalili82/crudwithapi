@@ -32,15 +32,17 @@ const AddUser = () => {
      
   }
 
-  const isValid = validation();
   
 
   const handleAddTask= async () => {
-    if (isValid == true) {
+
+    const isValid = validation();
+
+    if (isValid == false) {
       validation();
     }
 
-    else if (isValid == false) {
+    else if (isValid == true) {
       const data = {id: id, title: title, description: description, completed: completed}
       await fetch("http://46.100.46.149:8069/api/tasks", {
         method: "POST",

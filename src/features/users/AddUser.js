@@ -27,16 +27,20 @@ const AddUser = () => {
    if (completed.length == 0) {
      alert('Invalid Form, Completed can not be empty')
    }
+
+   return true;
      
   }
+
+  const isValid = validation();
   
 
   const handleAddTask= async () => {
-    if (id.length == 0 || title.length == 0 || description.length == 0 || completed.length == 0) {
+    if (isValid == true) {
       validation();
     }
 
-    else {
+    else if (isValid == false) {
       const data = {id: id, title: title, description: description, completed: completed}
       await fetch("http://46.100.46.149:8069/api/tasks", {
         method: "POST",

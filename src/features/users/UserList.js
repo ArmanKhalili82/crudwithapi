@@ -6,10 +6,14 @@ const UserList = () => {
 
   const [users, setUsers] = useState([]);
 
-  useEffect( async () => {
+  const getAll = async() => {
     const response = await fetch("http://46.100.46.149:8069/api/tasks")
     const data = await response.json();
     setUsers(data)
+  }
+
+  useEffect( () => {
+    getAll()
   },[])
 
   

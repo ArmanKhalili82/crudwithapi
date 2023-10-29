@@ -7,7 +7,7 @@ const UserList = () => {
   const [users, setUsers] = useState([]);
 
   useEffect( async () => {
-    const response = await fetch("http://46.100.46.149:8069./api/tasks")
+    const response = await fetch("http://46.100.46.149:8069/api/tasks")
     const data = await response.json();
     setUsers(data)
   },[])
@@ -15,7 +15,7 @@ const UserList = () => {
   
 
   const handleRemoveUser = async (id) => {
-    await fetch(`http://46.100.46.149:8069./api/tasks/${id}`, {
+    await fetch(`http://46.100.46.149:8069/api/tasks/${id}`, {
       method: "DELETE",
     })
   }

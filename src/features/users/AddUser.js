@@ -38,7 +38,7 @@ const AddUser = () => {
 
     else {
       const data = {id: id, title: title, description: description, completed: completed}
-      await fetch("http://46.100.46.149:8069./api/tasks", {
+      await fetch("http://46.100.46.149:8069/api/tasks", {
         method: "POST",
         RequestBody: data
       })

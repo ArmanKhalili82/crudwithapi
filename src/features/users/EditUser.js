@@ -13,7 +13,7 @@ const EditUser = () => {
   const [completed, setCompleted] = useState(true);
 
   const getData = async () => {
-    const response = await fetch(`http://46.100.46.149:8069./api/tasks/${taskid}`)
+    const response = await fetch(`http://46.100.46.149:8069/api/tasks/${taskid}`)
     const data = await response.json();
     setId(data.id);
     setTitle(data.title);
@@ -57,7 +57,7 @@ const EditUser = () => {
 
     else {
       const data = {id: id, title: title, description: description, completed: completed}
-      await fetch(`http://46.100.46.149:8069./tasks/api/tasks/`, {
+      await fetch(`http://46.100.46.149:8069/tasks/api/tasks/`, {
         method: "put",
         body: JSON.stringify(data),
         headers: {"Content-Type": "application/json"}

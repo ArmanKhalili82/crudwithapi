@@ -34,19 +34,23 @@ const Addedit = () => {
   
    const validation = () => {
      if (id == 0) {
-       return ('Invalid Form, Id can not be empty')
+       setError("invalid Form Id cannot be empty")
+       return false;
      }
   
      if (title.length == 0) {
-       return ('Invalid Form, Title can not be empty')
+      setError("invalid Form Title cannot be empty")
+      return false;
      }
   
      if (description.length == 0) {
-       return ('Invalid Form, Description can not be empty')
+      setError("invalid Form Description cannot be empty")
+      return false;
     }
   
     if (completed.length == 0) {
-       return ('Invalid Form, Completed can not be empty')
+      setError("invalid Form Completed cannot be empty")
+      return false;
     }
   
     return true;

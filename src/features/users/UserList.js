@@ -24,7 +24,7 @@ const UserList = () => {
   }
 
   // const renderCard = () => users.map(user => (
-    <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
+    
 
     const render = () => {users.filter((user) => {
         return search.toLowerCase() === '' ? user : user.title.toLowerCase().includes(search);
@@ -58,6 +58,7 @@ const UserList = () => {
 
   return (
     <div>
+      <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
       <Link to="/Addedit/new"><Button>Add User</Button></Link>
       <div className="grid gap-5 md:grid-cols-2">
         {users.length ? render() : <p className="text-center col-span-2 text-gray-700 font-semibold">No User Available</p>}

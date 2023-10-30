@@ -57,7 +57,7 @@ const UserList = () => {
       <Link to="/Addedit/new"><Button>Add User</Button></Link>
       <div className="grid gap-5 md:grid-cols-2">
         {/* {users.length ? renderCard() : <p className="text-center col-span-2 text-gray-700 font-semibold">No User Available</p>} */}
-        {users.map(user)}
+        {users.map}
       </div>
     </div>
       </div>

@@ -26,16 +26,11 @@ const UserList = () => {
   // const renderCard = () => users.map(user => (
     
 
-    const render = () => {users.filter((user) => {
-        return user.title.toLowerCase().includes(search)
-    }).map((user) => {
-        return (
-    <div className="bg-gray-300 p-5 flex items-center justify-between">
+  const renderCard = () => users.map(user => (
+    <div className="bg-gray-300 p-5 flex items-center justify-between" key={user.id}>
       <div>
-        <span className="font-normal text-gray-600">{user.id}</span>
-        <h3 className="font-bold text-lg text-gray-700">{user.title}</h3>
-        <span className="font-normal text-gray-600">{user.description}</span>
-        <span className="font-normal text-gray-600">{user.completed}</span>
+        <h3 className="font-bold text-lg text-gray-700">{user.name}</h3>
+        <span className="font-normal text-gray-600">{user.email}</span>
       </div>
       <div className="flex gap-4">
         <Link to={`Addedit/${user.id}`}>
@@ -54,14 +49,13 @@ const UserList = () => {
         </button>
       </div>
     </div>
-  )})}
+  ))
 
   return (
     <div>
-      <input type="text" placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
       <Link to="/Addedit/new"><Button>Add User</Button></Link>
       <div className="grid gap-5 md:grid-cols-2">
-        {users.length ? render() : <p className="text-center col-span-2 text-gray-700 font-semibold">No User Available</p>}
+        {users.length ? renderCard() : <p className="text-center col-span-2 text-gray-700 font-semibold">No User Available</p>}
       </div>
     </div>
   )

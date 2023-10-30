@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import AddUser from "./features/users/AddUser";
 import EditUser from "./features/users/EditUser";
 import UserList from "./features/users/UserList";
+import Addedit from "./features/users/Addedit";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<UserList />} />
         <Route path="/add-user" element={<AddUser />} />
-        <Route path="/edit-user/:taskid" element={<EditUser />} />
+        <Route path="/Addedit/:taskid" element={<Addedit />} />
       </Routes>
     </div>
   );

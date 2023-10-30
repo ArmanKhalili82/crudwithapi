@@ -29,7 +29,7 @@ const UserList = () => {
  
 
   return (
-    {users.map(user => (
+    (user => (
       <div>
         <div className="bg-gray-300 p-5 flex items-center justify-between" key={user.id}>
         <div>
@@ -57,10 +57,11 @@ const UserList = () => {
       <Link to="/Addedit/new"><Button>Add User</Button></Link>
       <div className="grid gap-5 md:grid-cols-2">
         {/* {users.length ? renderCard() : <p className="text-center col-span-2 text-gray-700 font-semibold">No User Available</p>} */}
+        {users.map(user)}
       </div>
     </div>
       </div>
-    ))}
+    ))
   )
 }
 

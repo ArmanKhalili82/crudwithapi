@@ -27,7 +27,7 @@ const UserList = () => {
     
 
     const render = () => {users.filter((user) => {
-        return search.toLowerCase() === '' ? user : user.title.toLowerCase().includes(search);
+        return user.title.toLowerCase().includes(search)
     }).map((user) => {
         return (
     <div className="bg-gray-300 p-5 flex items-center justify-between">

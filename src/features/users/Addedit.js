@@ -5,14 +5,13 @@ import TextField from "../../components/TextField"
 
 const Addedit = () => {
 
-  const EditUser = () => {
-    let  {taskid} = useParams();
+    let {taskid} = useParams();
     const navigate = useNavigate();
     const [id, setId] = useState(0);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [completed, setCompleted] = useState(true);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState("");
   
     const getData = async () => {
       const response = await fetch(`http://46.100.46.149:8069/api/tasks/${taskid}`)
@@ -101,31 +100,31 @@ const Addedit = () => {
         value={id}
         onChange={(e) => setId(e.target.value)}
         inputProps={{ type: 'number'}}
-      />
+      >{setError}</TextField>
       <br />
       <TextField
         label="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         inputProps={{ type: 'string'}}
-      />
+        >{setError}</TextField>
       <br />
       <TextField
         label="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         inputProps={{ type: 'string'}}
-      />
+        >{setError}</TextField>
       <br />
       <TextField
         label="Completed"
         value={completed}
         onChange={(e) => setCompleted(e.target.value)}
         inputProps={{ type: 'string'}}
-      />
+        >{setError}</TextField>
       <Button onClick={handleSave}>Save</Button>
     </div>
   )
-}}
+}
 
 export default Addedit

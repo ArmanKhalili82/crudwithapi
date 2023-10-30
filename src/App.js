@@ -1,6 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import AddUser from "./features/users/AddUser";
-import EditUser from "./features/users/EditUser";
 import UserList from "./features/users/UserList";
 import Addedit from "./features/users/Addedit";
 
@@ -10,7 +8,6 @@ function App() {
       <h1 className="text-center font-bold text-2xl text-gray-700">crud</h1>
       <Routes>
         <Route path="/" element={<UserList />} />
-        <Route path="/add-user" element={<AddUser />} />
         <Route path="/Addedit/:taskid" element={<Addedit />} />
       </Routes>
     </div>
